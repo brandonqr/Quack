@@ -9,7 +9,7 @@ declare let $:any;
 export class LoginModalFormComponent implements OnInit {
   public abrirModal(){
     console.log("click en modal")
-        $("#myModal").modal();
+        $("#modalLogin").modal();
 
   }
   constructor() { }
