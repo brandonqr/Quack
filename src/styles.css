@@ -4,3 +4,16 @@
 #modalLogin hr{
   color :black;
 }
+#dropdownMenu2{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-size: cover;
+
+}
+.btnMenuUsuario{
+width: 2px;
+}
+.dropdown-menu{
+  min-width: auto;
+}

@@ -1,6 +1,18 @@
 
   <!-- Trigger the modal with a button -->
-<i (click)="abrirModal()" id="myBtn" class="fa fa-2x fa-user" [routerLink]="['login']" ></i>
+
+<div *ngIf="!profile">
+  <i (click)="abrirModal()" id="myBtn" class="fa fa-2x fa-user"></i>
+</div>
+<div class="dropdown" *ngIf="profile">
+  <div  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [ngStyle]="{'background-image': 'url( ' +(profile.picture)+ ')'}">
+    </div>
+  <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item btnMenuUsuario btn-outline-danger" type="button" [routerLink]='["perfil",profile?.sub]'><i class="fa fa-user" aria-hidden="true"></i></button>
+    <!--<button class="dropdown-item btnMenuUsuario btn-outline-danger" type="button">C</button>-->
+    <button  class="dropdown-item btnMenuUsuario btn-outline-danger" type="button" (click)="auth.logout()"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+  </div>
+</div>
 
   <!-- Modal -->
   <div class="modal fade" id="modalLogin" role="dialog">
@@ -31,7 +43,13 @@
             <hr style="color:black; width: 100%; border:1px solid;" />
             <div class="">
               <h1 class="text-md-center">Entra con una red social</h1>
-              <button class="text-md-center" type="button" name="button">boton auth luego cambiar</button>
+              <button
+                class="btn btn-primary btn-margin"
+                *ngIf="!auth.isAuthenticated()"
+                (click)="auth.login()">
+                  Log In
+              </button>
+
             </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>

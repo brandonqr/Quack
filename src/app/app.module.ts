@@ -10,13 +10,20 @@ import { APP_ROUTING } from "./app.routes";
 import { LoginComponent } from './components/login/login.component';
 import { LoginModalFormComponent } from './components/login/login-modal-form.component';
 
+//services
+import { AuthService}  from "./services/auth.service";
+import { AuthGuardService } from "./services/auth-guard.service";
+
+import { PerfilComponent } from './components/perfil/perfil.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    LoginModalFormComponent
+    LoginModalFormComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,8 @@ import { LoginModalFormComponent } from './components/login/login-modal-form.com
     APP_ROUTING
   ],
   providers: [
-
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
