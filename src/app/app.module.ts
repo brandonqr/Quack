@@ -15,6 +15,7 @@ import { AuthService}  from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
 
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { ColumnaNavegacionComponent } from './components/perfil/columna-navegacion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     HomeComponent,
     LoginComponent,
     LoginModalFormComponent,
-    PerfilComponent
+    PerfilComponent,
+    ColumnaNavegacionComponent
   ],
   imports: [
     BrowserModule,
