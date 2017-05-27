@@ -16,6 +16,13 @@ import { AuthGuardService } from "./services/auth-guard.service";
 
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ColumnaNavegacionComponent } from './components/perfil/columna-navegacion.component';
+import { MiPerfilComponent } from './components/perfil/mi-perfil.component';
+import { EventoFormComponent } from './components/perfil/evento-form.component';
+import { EventosCreadosComponent } from './components/perfil/eventos-creados.component';
+import { EventosNoCreadosComponent } from './components/perfil/eventos-no-creados.component';
+import { PuntuacionRecibidaComponent } from './components/perfil/puntuacion-recibida.component';
+import { PuntuacionHechaComponent } from './components/perfil/puntuacion-hecha.component';
+import { PerfilInformacionComponent } from './components/perfil/perfil-informacion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { ColumnaNavegacionComponent } from './components/perfil/columna-navegaci
     LoginComponent,
     LoginModalFormComponent,
     PerfilComponent,
-    ColumnaNavegacionComponent
+    ColumnaNavegacionComponent,
+    MiPerfilComponent,
+    EventoFormComponent,
+    EventosCreadosComponent,
+    EventosNoCreadosComponent,
+    PuntuacionRecibidaComponent,
+    PuntuacionHechaComponent,
+    PerfilInformacionComponent
   ],
   imports: [
     BrowserModule,
