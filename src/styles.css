@@ -31,3 +31,11 @@ width: 2px;
 .pointer{
   cursor: pointer;
 }
+/*
+.custom-file-control::after {
+  content: "Choose file...";
+}
+*/
+.custom-file-control:before {
+  content: "Browse";
+}

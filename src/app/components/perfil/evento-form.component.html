@@ -1,3 +1,60 @@
-<p>
-  evento-form works!
-</p>
+
+<form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+  <div class="form-group row" [ngClass]="{'has-danger': !forma.get('nombre').valid}">
+    <label>Nombre:</label>
+    <input type="text"
+           class="form-control"
+           placeholder="Entra un nombre..."
+           formControlName="nombre">
+    <div *ngIf="forma.get('nombre').errors?.required"
+          class="form-control-feedback">
+          este campo es requerido
+    </div>
+    <div *ngIf="forma.get('nombre').errors?.minlength"
+          class="form-control-feedback">
+          Por lo menos {{forma.get('nombre').errors.minLengths}} caracteres
+    </div>
+  </div>
+  <div class="form-group row">
+     <label>Descripcion:</label>
+     <textarea type="text"
+            class="form-control"
+            placeholder="Entra una descripcion..."
+            formControlName="descripcion"
+            ></textarea>
+  </div>
+  <div class="form-group row">
+     <label>Categoria:</label>
+     <textarea type="text"
+            class="form-control"
+            placeholder="Entra categoria(s)..."
+            formControlName="categoria"
+            ></textarea>
+            <small>separa las categorias por comas</small>
+  </div>
+  <div class="form-group row">
+     <label>Esto se cambiará por el mapa:</label>
+     <textarea type="text"
+            class="form-control"
+            placeholder="Aqui irá el mapa..."
+            formControlName="descripcion"
+            ></textarea>
+  </div>
+  <div class="form-group row">
+    <label class="custom-file form-control" >
+      <input type="file" id="file" class="custom-file-input form-control" (change)="getFiles($event)"  formControlName="imagen">
+      <span class="custom-file-control" id="spanFile"></span>
+    </label>
+  </div>
+  <div class="form-group row">
+  <label>Fecha:</label>
+  <input type="date" name="" value="" class="form-control">
+
+  </div>
+  <div class="form-group row">
+    <button type="submit" class="btn-outline-success btn-block">
+      Crear Formulario
+    </button>
+  </div>
+  {{ forma.valid }}
+</form>
