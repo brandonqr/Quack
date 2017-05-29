@@ -17,12 +17,16 @@ import { AuthGuardService } from "./services/auth-guard.service";
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ColumnaNavegacionComponent } from './components/perfil/columna-navegacion.component';
 import { MiPerfilComponent } from './components/perfil/mi-perfil.component';
-import { EventoFormComponent } from './components/perfil/evento-form.component';
 import { EventosCreadosComponent } from './components/perfil/eventos-creados.component';
 import { EventosNoCreadosComponent } from './components/perfil/eventos-no-creados.component';
 import { PuntuacionRecibidaComponent } from './components/perfil/puntuacion-recibida.component';
 import { PuntuacionHechaComponent } from './components/perfil/puntuacion-hecha.component';
 import { PerfilInformacionComponent } from './components/perfil/perfil-informacion.component';
+import { QuedadaFormComponent } from './components/perfil/eventos-form/quedada-form.component';
+import { ServicioFormComponent } from './components/perfil/eventos-form/servicio-form.component';
+import { CompraFormComponent } from './components/perfil/eventos-form/compra-form.component';
+import { EventosFormComponent } from './components/perfil/eventos-form/eventos-form.component';
+import { OtrosFormComponent } from './components/perfil/eventos-form/otros-form.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +38,16 @@ import { PerfilInformacionComponent } from './components/perfil/perfil-informaci
     PerfilComponent,
     ColumnaNavegacionComponent,
     MiPerfilComponent,
-    EventoFormComponent,
     EventosCreadosComponent,
     EventosNoCreadosComponent,
     PuntuacionRecibidaComponent,
     PuntuacionHechaComponent,
-    PerfilInformacionComponent
+    PerfilInformacionComponent,
+    QuedadaFormComponent,
+    ServicioFormComponent,
+    CompraFormComponent,
+    EventosFormComponent,
+    OtrosFormComponent
 
   ],
   imports: [
