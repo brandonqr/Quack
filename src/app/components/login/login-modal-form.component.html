@@ -5,10 +5,10 @@
   <i (click)="abrirModal()" id="myBtn" class="fa fa-2x fa-user"></i>
 </div>
 <div class="dropdown" *ngIf="profile">
-  <div  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [ngStyle]="{'background-image': 'url( ' +(profile.picture)+ ')'}">
+  <div  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [ngStyle]="{'background-image': 'url( ' +(usuario?.imagen)+ ')'}">
     </div>
   <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item btnMenuUsuario btn-outline-danger" type="button" [routerLink]='["perfil",profile?.sub]'><i class="fa fa-user" aria-hidden="true"></i></button>
+    <button class="dropdown-item btnMenuUsuario btn-outline-danger" type="button" [routerLink]='["perfil",usuario?.socialId]'><i class="fa fa-user" aria-hidden="true"></i></button>
     <!--<button class="dropdown-item btnMenuUsuario btn-outline-danger" type="button">C</button>-->
     <button  class="dropdown-item btnMenuUsuario btn-outline-danger" type="button" (click)="auth.logout()"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
   </div>

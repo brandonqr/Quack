@@ -16,7 +16,7 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://quack.eu.auth0.com/userinfo',
     redirectUri:'http://localhost:4200/home',
-    scope: 'openid profile'
+    scope: 'openid profile email'
   });
 
   public handleAuthentication(): void {
@@ -52,6 +52,8 @@ private setSession(authResult): void {
     localStorage.removeItem('expires_at');
     // Go back to the home route
     localStorage.removeItem("profile");
+    localStorage.removeItem("usuario");
+  //  localStorage.removeItem("salir");
 
   //  this.router.navigate(['home']);
     window.location.href = 'http://localhost:4200/home';

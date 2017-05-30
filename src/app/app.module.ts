@@ -27,6 +27,7 @@ import { ServicioFormComponent } from './components/perfil/eventos-form/servicio
 import { CompraFormComponent } from './components/perfil/eventos-form/compra-form.component';
 import { EventosFormComponent } from './components/perfil/eventos-form/eventos-form.component';
 import { OtrosFormComponent } from './components/perfil/eventos-form/otros-form.component';
+import { UsuarioService } from "./services/usuario.service";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { OtrosFormComponent } from './components/perfil/eventos-form/otros-form.
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })

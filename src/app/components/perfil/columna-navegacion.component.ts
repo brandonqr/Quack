@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-declare let jQuery:any;
-declare let $:any;
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-columna-navegacion',
@@ -8,21 +6,13 @@ declare let $:any;
   styles: []
 })
 export class ColumnaNavegacionComponent implements OnInit {
-profile:any;
-  constructor() {
-
-
-   }
+@Input() usuario;
+constructor() {
+ }
 
   ngOnInit() {
 
-    this.profile=JSON.parse(localStorage.getItem("profile"))
-
   }
-  editableInput(username:string){
-    //$("#inputNickname").val()//
-  console.log(  $("#inputNickname").prop('readonly', false))
 
-  }
 
 }

@@ -22,7 +22,7 @@ export class QuedadaFormComponent implements OnInit {
   };
     forma:FormGroup;
   constructor() {
-    console.log(this.evento)
+  //  console.log(this.evento)
     this.forma=new FormGroup({
       'nombre': new FormControl('', [Validators.required, Validators.minLength(5)]),
       'descripcion': new FormControl('', Validators.required),

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth.service";
+import { Usuario } from "../../interfaces/usuario.interface";
 
 declare let jQuery:any;
 declare let $:any;
@@ -10,8 +11,22 @@ declare let $:any;
 })
 export class LoginModalFormComponent implements OnInit {
   profile:any;
+  usuario:Usuario={
+    nickname : "",
+    nombre : "",
+    email : "",
+    sexo : "",
+    localidad : "",
+    socialId : "",
+    imagen : "",
+    puntuacion : 0,
+    descripcion:"",
+    fecha_nacimiento:new Date().toLocaleDateString(),
+    nCambioNick:0,
+    contrasenya:""
+
+  }
   public abrirModal(){
-    console.log("click en modal")
         $("#modalLogin").modal();
 
   }
@@ -22,6 +37,18 @@ export class LoginModalFormComponent implements OnInit {
   }
   ngOnInit() {
     this.profile=JSON.parse(localStorage.getItem("profile"));
+    if(this.profile!=null){
+
+
+      this.profile=JSON.parse(localStorage.getItem("profile"));
+      this.usuario.email=this.profile.email;
+      this.usuario.nombre=this.profile.name;
+      this.usuario.imagen=this.profile.picture;
+      this.usuario.socialId=this.profile.sub;
+      this.usuario.nickname=this.profile.nickname;
+      this.usuario.sexo=(this.profile.gender)?"Hombre":"Mujer";
+      localStorage.setItem("usuario",JSON.stringify(this.usuario))
+    }
 
   }
 
