@@ -9,7 +9,6 @@ export interface Usuario{
   puntuacion : number;
   descripcion?:string;
   fecha_nacimiento?:string;
-  nCambioNick:number;
   contrasenya:string;
   key?:string;
 }
