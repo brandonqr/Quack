@@ -1,5 +1,10 @@
 
-<form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+
+
+
+
+
+<form [formGroup]="forma" (ngSubmit)="crearQuack()">
   <div class="form-group row" [ngClass]="{'has-danger': !forma.get('nombre').valid}">
     <label>Nombre:</label>
     <input type="text"
@@ -33,19 +38,36 @@
             <small>separa las categorias por comas</small>
   </div>
   <div class="form-group row">
-     <label>Esto se cambiará por el mapa:</label>
-     <textarea type="text"
-            class="form-control"
-            placeholder="Aqui irá el mapa..."
-            formControlName="descripcion"
-            ></textarea>
+    <label>Ubicacion:</label>
   </div>
+
+  <div class="form-group">
+    <input placeholder="Entra un lugar" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+  <sebm-google-map
+                  [latitude]="lat"
+                  [longitude]="lng"
+                  [scrollwheel]="false"
+                  [zoom]="zoom"
+                  >
+    <sebm-google-map-marker  *ngFor="let marcador of mService.marcadores; let i=index"
+                            [latitude]="lat"
+                            [longitude]="lng"
+                            [markerDraggable]="true"
+                            (dragEnd)="dragEndMarcador( marcador, $event )"
+                            ></sebm-google-map-marker>
+  </sebm-google-map>
+
+<!--
   <div class="form-group row">
+
+    <label>Imagen:</label>
     <label class="custom-file form-control" >
       <input type="file" id="file" class="custom-file-input form-control" (change)="getFiles($event)"  formControlName="imagen">
       <span class="custom-file-control" id="spanFile"></span>
     </label>
   </div>
+-->
   <div class="form-group row">
   <label>Fecha:</label>
   <input type="date" name="" value="" class="form-control">

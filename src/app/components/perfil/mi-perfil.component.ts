@@ -9,25 +9,18 @@ import { ActivatedRoute } from "@angular/router";
   styles: []
 })
 export class MiPerfilComponent implements OnInit {
-usuario:Usuario;
+perfil:any;
   constructor(private uService:UsuarioService, private aRoute:ActivatedRoute) {
-    this.aRoute.parent.params.subscribe(
-      params=>{
-        this.uService.obtenerUsuarioBySocialId(params['id']).subscribe(
-          data=>{
-            this.usuario=data[0];
-            
-          }
-        );
-      }
-    )
-
-
-
 
    }
 
   ngOnInit() {
+    this.aRoute.parent.params.subscribe(data=>{
+            this.uService.getUsuariobyId(data.id).subscribe(data=>{
+              this.perfil=data;
+            })
+    })
+
   }
 
 }

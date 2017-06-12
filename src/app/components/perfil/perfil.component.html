@@ -1,4 +1,4 @@
-<!--<app-columna-navegacion [usuario]="usuario"></app-columna-navegacion>-->
+<!--<app-columna-navegacion [perfil]="perfil"></app-columna-navegacion>-->
 
 
 
@@ -9,9 +9,9 @@
 <div class="col-md-4">
 
   <div class="card">
-    <img class="card-img-top fotoPerfilBarraIzquierda" [src]="usuario.imagen" alt="Card image cap">
+    <img class="card-img-top fotoPerfilBarraIzquierda" [src]="perfil.imagen" alt="Card image cap">
     <div class="card-block text-md-center">
-      <input name="nickname" id="inputNickname" class="text-lg-center" style="border:none" type="text" [value]="usuario.nickname" readonly>
+      <input name="nickname" id="inputNickname" class="text-lg-center" style="border:none" type="text" [value]="perfil.nickname" readonly>
     </div>
   </div>
 <ul class="list-group" id="columnaNavegacionPerfil">

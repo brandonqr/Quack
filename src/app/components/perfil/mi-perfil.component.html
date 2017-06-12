@@ -1,2 +1,7 @@
 
-{{ usuario | json}}
+{{ perfil | json}}
+<div *ngIf="perfil">
+  <div class="portadaPerfil" [ngStyle]="{'background-image': 'url( ../../../assets/img/portada.png  )'}">
+    <img class="fotoPerfil" [src]="perfil.imagen" alt="">
+  </div>
+</div>

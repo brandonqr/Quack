@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,6 +14,8 @@ import { LoginModalFormComponent } from './components/login/login-modal-form.com
 //services
 import { AuthService}  from "./services/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
+import { MapasService } from "./services/mapas.service";
+import { AgmCoreModule } from "angular2-google-maps/core";
 
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ColumnaNavegacionComponent } from './components/perfil/columna-navegacion.component';
@@ -28,7 +31,8 @@ import { CompraFormComponent } from './components/perfil/eventos-form/compra-for
 import { EventosFormComponent } from './components/perfil/eventos-form/eventos-form.component';
 import { OtrosFormComponent } from './components/perfil/eventos-form/otros-form.component';
 import { UsuarioService } from "./services/usuario.service";
-
+import { EventoService } from "./services/evento.service";
+import { RegistroLoginService } from "./services/registro-login.service"
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,16 +56,24 @@ import { UsuarioService } from "./services/usuario.service";
 
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDSk0wgg8zV26dmBb6LrcNsT9oxa8Hk4fs',
+      libraries: ["places"]
+    }),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+
     APP_ROUTING
   ],
   providers: [
     AuthService,
     AuthGuardService,
-    UsuarioService
+    UsuarioService,
+    EventoService,
+    MapasService,
+    RegistroLoginService
   ],
   bootstrap: [AppComponent]
 })
